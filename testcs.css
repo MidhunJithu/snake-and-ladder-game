@@ -1,0 +1,190 @@
+#ltplyarea, #rtplyarea{
+   visibility: hidden;
+   min-height: 300px;
+  
+}
+
+#pic1{
+    position: absolute;
+    margin: 14px 0px 0px 300px;
+    z-index: 2;
+    
+}
+.round{
+    border-radius: 50%;
+}
+#initbtn,#helpbtn{
+    border: none;
+    background: transparent;
+    animation:playbtn 1s infinite;
+}
+@keyframes playbtn {
+    0% {transform: translate3d(0px,0px,0px);}
+    25% {transform: translate3d(0px,3px,3px);}
+    50% {transform: translate3d(0px,6px,6px);}
+    75% {transform: translate3d(0px,3px,3px);}
+    100% {transform: translate3d(0px,0px,0px);}
+}
+
+body{
+    background-image: url("../assets/w1.png");
+    font-family: 'Architects Daughter', cursive;
+}
+#t1,#t2{
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+  
+}
+h1{
+    color: darkgreen;
+    text-align: center;
+    font-weight: bolder;
+}
+h1+p{
+    text-align: center;
+    color: darkred;
+    font-weight: bolder;
+}
+#btn-hidden{
+    display: none;
+}
+#ltplyarea{
+    background: url("../assets/bg1.jfif") no-repeat;
+    background-size: cover;
+    background-blend-mode: luminosity;
+}#ltplyarea span,#demo2{
+    color: white;
+    font-weight: bolder;
+}
+#arrow1{
+
+transform: translateX(20px);
+animation: movein 0.8s infinite;
+}
+@keyframes movein {
+    0%{transform: translateX(20px);}
+   50%{transform: translateX(0px);}
+    100%{transform: translateX(20px);}
+}
+
+.rollin{
+    animation: rollIn 0.5s infinite;
+}
+@keyframes diceroll {
+    0%{transform: rotate3d(0deg);}
+    100%{transform: rotate3d(360deg);}
+}
+@keyframes rollIn {
+    0% {
+       opacity: 0;
+       transform: translateX(-100%) rotate(-120deg);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0px) rotate(0deg);
+    }  
+ }
+#rtplyarea{
+    background-image: url(../assets/bg2.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#pic2{
+    position: absolute;
+    margin: 270px 0px 0px 200px;
+    z-index: 2;  
+    /*transform: skewX(10deg);*/
+    
+}
+#pic3{
+    position: absolute;
+    margin: 115px 0px 0px 680px;
+    z-index: 2;  
+  
+    
+}
+#pic4{
+    position: absolute;
+    margin: 120px 0px 0px 480px;
+    z-index: 2;  
+    transform: skewX(20deg);
+}
+#pic5{
+    position: absolute;
+    margin: 100px 0px 0px 350px;
+    z-index: 2;  
+    transform: scaleX(-1);
+}
+#pic6{
+    position: absolute;
+    margin: 20px 0px 0px 820px;
+    z-index: 2;  
+    transform: scaleX(-1);
+}
+#pic7{
+    position: absolute;
+    margin: 350px 0px 0px 500px;
+    z-index: 2;  
+    transform: scaleX(-1);
+    transform: rotate(25deg);
+}
+#pic8{
+    position: absolute;
+    margin: 320px 0px 0px 820px;
+    z-index: 2;  
+    transform: scaleX(-1);
+    transform: rotate(25deg);
+}
+#pic9{
+    position: absolute;
+    margin: 200px 0px 0px 420px;
+    z-index: 2;  
+    transform: scaleX(-1);
+    transform: rotate(25deg);
+}
+#pic10{
+    position: absolute;
+    margin: 70px 0px 0px 200px;
+    z-index: 2;  
+}
+#p1,#p2{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    margin-top: 5px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    height: 40px;
+    
+}
+#p1:focus,#p2:focus{
+    border:2px solid blue;
+}
+
+
+@media screen and (max-width:1200px) {
+    #pic1{margin: 14px 0px 0px 235px;}
+    #pic2{margin: 270px 0px 0px 170px;}
+    #pic3{margin: 115px 0px 0px 550px;}
+    #pic4{margin: 120px 0px 0px 395px;}
+    #pic5{margin: 100px 0px 0px 300px;}
+    #pic6{margin: 20px 0px 0px 680px;}
+    #pic7{margin: 350px 0px 0px 425px;}
+    #pic8{margin: 320px 0px 0px 680px;}
+    #pic9{margin: 200px 0px 0px 350px;}
+    #pic10{margin: 70px 0px 0px 150px;}
+}
+@media screen and (max-width:999px) {
+    #pic1,#pic2,#pic3,#pic4,#pic5,#pic6,#pic7,#pic8,#pic9,#pic10{display: none;}
+    .sn99,.sn74,.sn77,.sn25,.sn57{background-image: url('../assets/snake_hiss.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          color: blue;
+         }
+    .ld21,.lad35,.lad71,.lad12,lad61{background-image: url('../assets/ladder-black.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          color: blue;
+         }
+}

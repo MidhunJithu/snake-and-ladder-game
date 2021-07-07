@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Game | Midhun</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/testcs.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+<!--header and board-->
+<div class="container container-fluid">
+  <h1>SNAKES & LADDER GAME</h1>
+  <p>This is a sample board game</p>
+  <!--board-->
+  <!--row1-->
+  <img src="../assets/snake1.png" height="325px" width="100px" id='pic1' />
+  <img src="../assets/laddeer1.png" height="120px" width="100px" id='pic2'>
+  <img src="../assets/snap.png" height="160px" width="100px" id='pic3'>
+  <img src="../assets/ladder.jpg" height="200px" width="100px" id='pic4'>
+  <img src="../assets/snap.png" height="100px" width="100px" id='pic5'>
+  <img src="../assets/laddeer1.png" height="120px" width="80px" id='pic6'>
+  <img src="../assets/snake2.png" height="120px" width="100px" id='pic7'>
+  <img src="../assets/ladder.jpg" height="100px" width="50px" id='pic8'>
+  <img src="../assets/snake2.png" height="120px" width="100px" id='pic9'>
+  <img src="../assets/ladder.jpg" height="100px" width="50px" id='pic10'>
+<div class="row">
+  <div class="col-sm-2" id="ltplyarea">
+    <h4 id="ply1name" style="padding: 7px;color: white;"></h4>
+    <img src="../assets/av1.png" width="125" style="display: block;">
+    <div id="ply1control">
+      <button class=" btn btn-success" onclick="roll()" style="margin-top: 20px;" >Roll Dice</button>
+      <img src="../assets/arrow.png" width="30" id="arrow1">
+      <br>
+      </div>
+      <!--dice image-->
+    <div class="container" style="margin-top: 20px; padding-bottom: 20px;">
+    <img src="../assets/0.jfif" width="50" class="" id="dice" style="transition:ease-in 1s;">
+    <span id="demo">Roll Dice To Start</span>
+    </div>
+  </div>
+<div class="col-sm-8">
+   <div class="row" >
+
+    <div class="col"style="background-color:yellowgreen;height: 50px;">EnD
+      <button type="button" class="btn btn-primary round" id="100" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_100" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+    <div class="col sn99" style="background-color:orange;height: 50px;">99 Sto38
+      <button type="button" class="btn btn-primary round" id="99" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_99" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+    <div class="col" style="background-color:lavender;height: 50px;">98
+      <button type="button" class="btn btn-primary round" id="98" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_98" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+    <div class="col" style="background-color:orange;height: 50px;">97
+      <button type="button" class="btn btn-primary round" id="97" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_97" style="position: absolute;left: 40%;top: 40%;display: none;"></button> 
+    </div>
+    <div class="col" style="background-color:lavender;height: 50px;">96
+      <button type="button" class="btn btn-primary round" id="96" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_96" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+    <div class="col" style="background-color:orange;height: 50px;">95
+      <button type="button" class="btn btn-primary round" id="95" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_95" style="position: absolute;left: 40%;top: 40%;display: none;"></button>    
+    </div>
+    <div class="col" id="lad1_1" style="background-color:lavender;height: 50px;">94
+      
+      <button type="button" class="btn btn-primary round" id="94" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_94" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      
+    </div>
+    <div class="col" style="background-color:orange;height: 50px;">93
+      <button type="button" class="btn btn-primary round" id="93" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_93" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+    <div class="col" style="background-color:lavender;height: 50px;">92
+      <button type="button" class="btn btn-primary round" id="92" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_92" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+    <div class="col" style="background-color:orange;height: 50px;">91
+      <button type="button" class="btn btn-primary round" id="91" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+      <button type="button" class="btn btn-danger round" id="2_91" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    </div>
+   </div>
+   <div class="row">
+   <!--row2-->
+  <div class="col" style="background-color:orange;height: 50px;">81
+    <button type="button" class="btn btn-primary round" id="81" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_81" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">82
+    <button type="button" class="btn btn-primary round" id="82" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_82" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:orange;height: 50px;">83
+    <button type="button" class="btn btn-primary round" id="83" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_83" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">84
+    <button type="button" class="btn btn-primary round" id="84" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_84" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:orange;height: 50px;">85
+    <button type="button" class="btn btn-primary round" id="85" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_85" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">86
+    <button type="button" class="btn btn-primary round" id="86" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_86" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" id="lad1_2" style="background-color:orange;height: 50px;">87
+    <button type="button" class="btn btn-primary round" id="87" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_87" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">88
+    <button type="button" class="btn btn-primary round" id="88" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_88" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:orange;height: 50px;">89
+    <button type="button" class="btn btn-primary round" id="89" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_89" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">90
+    <button type="button" class="btn btn-primary round" id="90" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_90" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+   </div>
+   <div class="row">
+   <!--row3-->
+  <div class="col" style="background-color:lavender;height: 50px;">80
+    <button type="button" class="btn btn-primary round" id="80" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_80" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:orange;height: 50px;">79
+    <button type="button" class="btn btn-primary round" id="79" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_79" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">78
+    <button type="button" class="btn btn-primary round" id="78" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_78" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col sn77" style="background-color:orange;height: 50px;">77 Sto63
+    <button type="button" class="btn btn-primary round" id="77" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_77" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">76
+    <button type="button" class="btn btn-primary round" id="76" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_76" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:orange;height: 50px;">75
+    <button type="button" class="btn btn-primary round" id="75" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_75" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col sn74" style="background-color:lavender;height: 50px;">74 sto53
+    <button type="button" class="btn btn-primary round" id="74" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_74" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:orange;height: 50px;">73
+    <button type="button" class="btn btn-primary round" id="73" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_73" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col" style="background-color:lavender;height: 50px;">72 
+    <button type="button" class="btn btn-primary round" id="72" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_72" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+  <div class="col lad71" style="background-color:orange;height: 50px;">71 Lto92
+    <button type="button" class="btn btn-primary round" id="71" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+    <button type="button" class="btn btn-danger round" id="2_71" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+  </div>
+   </div>
+   <div class="row">
+  <!--row4-->
+ <div class="col lad61" style="background-color:orange;height: 50px;">61  Lto81
+   <button type="button" class="btn btn-primary round" id="61" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_61" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">62
+   <button type="button" class="btn btn-primary round" id="62" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_62" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">63
+   <button type="button" class="btn btn-primary round" id="63" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_63" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">64 
+   <button type="button" class="btn btn-primary round" id="64" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_64" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">65
+   <button type="button" class="btn btn-primary round" id="65" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_65" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">66
+   <button type="button" class="btn btn-primary round" id="66" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_66" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">67
+   <button type="button" class="btn btn-primary round" id="67" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_67" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">68
+   <button type="button" class="btn btn-primary round" id="68" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_68" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">69 
+   <button type="button" class="btn btn-primary round" id="69" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_69" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">70
+   <button type="button" class="btn btn-primary round" id="70" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_70" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+  </div>
+   <div class="row">
+  <!--row5-->
+ <div class="col" style="background-color:lavender;height: 50px;">60
+   <button type="button" class="btn btn-primary round" id="60" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_60" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">59
+   <button type="button" class="btn btn-primary round" id="59" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_59" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">58
+   <button type="button" class="btn btn-primary round" id="58" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_58" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col sn57" style="background-color:orange;height: 50px;">57 Sto45
+   <button type="button" class="btn btn-primary round" id="57" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_57" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">56
+   <button type="button" class="btn btn-primary round" id="56" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_56" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">55
+   <button type="button" class="btn btn-primary round" id="55" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_55" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">54
+   <button type="button" class="btn btn-primary round" id="54" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_54" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">53
+   <button type="button" class="btn btn-primary round" id="53" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_53" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">52
+   <button type="button" class="btn btn-primary round" id="52" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_52" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">51
+   <button type="button" class="btn btn-primary round" id="51" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_51" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+   </div>
+   <div class="row">
+  <!--row6-->
+ <div class="col" style="background-color:orange;height: 50px;">41
+   <button type="button" class="btn btn-primary round" id="41" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_41" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">42
+   <button type="button" class="btn btn-primary round" id="42" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_42" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">43
+   <button type="button" class="btn btn-primary round" id="43" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_43" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">44
+   <button type="button" class="btn btn-primary round" id="44" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_44" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">45
+   <button type="button" class="btn btn-primary round" id="45" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_45" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">46
+   <button type="button" class="btn btn-primary round" id="46" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_46" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">47
+   <button type="button" class="btn btn-primary round" id="47" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_47" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">48
+   <button type="button" class="btn btn-primary round" id="48" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_48" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:orange;height: 50px;">49 
+   <button type="button" class="btn btn-primary round" id="49" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_49" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+ <div class="col" style="background-color:lavender;height: 50px;">50
+   <button type="button" class="btn btn-primary round" id="50" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   <button type="button" class="btn btn-danger round" id="2_50" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+ </div>
+   </div>
+   <div class="row">
+    <!--row7-->
+   <div class="col" style="background-color:lavender;height: 50px;">40
+     <button type="button" class="btn btn-primary round" id="40" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_40" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:orange;height: 50px;">39
+     <button type="button" class="btn btn-primary round" id="39" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_39" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:lavender;height: 50px;">38
+     <button type="button" class="btn btn-primary round" id="38" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_38" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:orange;height: 50px;">37
+     <button type="button" class="btn btn-primary round" id="37" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_37" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:lavender;height: 50px;">36
+     <button type="button" class="btn btn-primary round" id="36" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_36" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col lad35" style="background-color:orange;height: 50px;">35 Lto76
+     <button type="button" class="btn btn-primary round" id="35" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_35" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:lavender;height: 50px;">34
+     <button type="button" class="btn btn-primary round" id="34" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_34" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:orange;height: 50px;">33
+     <button type="button" class="btn btn-primary round" id="33" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_33" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:lavender;height: 50px;">32 
+     <button type="button" class="btn btn-primary round" id="32" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_32" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+   <div class="col" style="background-color:orange;height: 50px;">31
+     <button type="button" class="btn btn-primary round" id="31" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     <button type="button" class="btn btn-danger round" id="2_31" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+   </div>
+     </div>
+   <div class="row">
+      <!--row8-->
+     <div class="col ld21" style="background-color:orange;height: 50px;">21 Lto42
+       <button type="button" class="btn btn-primary round" id="21" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_21" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">22
+       <button type="button" class="btn btn-primary round" id="22" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_22" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">23
+       <button type="button" class="btn btn-primary round" id="23" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_23" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">24
+       <button type="button" class="btn btn-primary round" id="24" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_24" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col sn25" style="background-color:orange;height: 50px;">25 Sto25
+       <button type="button" class="btn btn-primary round" id="25" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_25" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">26
+       <button type="button" class="btn btn-primary round" id="26" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_26" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">27
+       <button type="button" class="btn btn-primary round" id="27" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_27" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">28
+       <button type="button" class="btn btn-primary round" id="28" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_28" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">29
+       <button type="button" class="btn btn-primary round" id="29" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_29" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">30
+       <button type="button" class="btn btn-primary round" id="30" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_30" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+    </div>
+   <div class="row">
+      <!--row7-->
+     <div class="col" style="background-color:lavender;height: 50px;">20
+       <button type="button" class="btn btn-primary round" id="20" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_20" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">19
+       <button type="button" class="btn btn-primary round" id="19" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_19" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">18
+       <button type="button" class="btn btn-primary round" id="18" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_18" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">17
+       <button type="button" class="btn btn-primary round" id="17" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_17" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">16
+       <button type="button" class="btn btn-primary round" id="16" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_16" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">15
+       <button type="button" class="btn btn-primary round" id="15" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_15" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">14
+       <button type="button" class="btn btn-primary round" id="14" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_14" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">13
+       <button type="button" class="btn btn-primary round" id="13" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_13" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col lad12" style="background-color:lavender;height: 50px;">12 Lto31
+       <button type="button" class="btn btn-primary round" id="12" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_12" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">11
+       <button type="button" class="btn btn-primary round" id="11" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_11" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+    </div>
+   <div class="row">
+      <!--row8-->
+     <div class="col" style="background-color:green;height: 50px;">StArT
+       <button type="button" class="btn btn-primary round" id="1" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_1" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">2
+       <button type="button" class="btn btn-primary round" id="2" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_2" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">3
+       <button type="button" class="btn btn-primary round" id="3" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_3" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">4
+       <button type="button" class="btn btn-primary round" id="4" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_4" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">5
+       <button type="button" class="btn btn-primary round" id="5" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_5" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">6
+       <button type="button" class="btn btn-primary round" id="6" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_6" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">7
+       <button type="button" class="btn btn-primary round" id="7" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_7" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">8
+       <button type="button" class="btn btn-primary round" id="8" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_8" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:orange;height: 50px;">9
+       <button type="button" class="btn btn-primary round" id="9" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_9" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+     <div class="col" style="background-color:lavender;height: 50px;">10
+       <button type="button" class="btn btn-primary round" id="10" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+       <button type="button" class="btn btn-danger round" id="2_10" style="position: absolute;left: 40%;top: 40%;display: none;"></button>
+     </div>
+    </div>
+</div>
+<div class="col-sm-2" id="rtplyarea">
+  <h4 id="ply2name" style="padding: 7px;color: white;"></h4>
+  <img src="../assets/av2.png" width="150" style="display: block;">
+  <div id="ply2control">
+    <button class=" btn btn-danger" onclick="roll2()" style="margin-top: 20px;" >Roll Dice</button>
+    <img src="../assets/arrowleft.png" width="30" id="arrow1">
+    <br>
+    </div>
+    <!--dice image-->
+    <div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+    <img src="../assets/0.jfif" width="50" class="" id="dice2" style="transition:ease-in 1s;">
+    <span id="demo2">Roll Dice To Start</span>
+   </div>
+
+</div>
+</div>
+
+</div><!--board ends-->
+
+
+<!-- Button to Open the Modal for play -->
+<div class="container-fluid text-center"">
+<button type="button"  data-toggle="modal" data-target="#myModal" id="initbtn">
+  <img src="../assets/playbutton.png" alt="play" width="85">
+</button>
+<button type="button"  data-toggle="modal" data-target="#myModalhelp" id="helpbtn">
+  <img src="../assets/info.png" alt="play" width="70">
+</button>
+</div>
+<!-- The Modal -->
+<div class="modal " id="myModal">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title">
+          <h4 class=" text-center">SNAKES & LADDER</h4>
+          <img src="../assets/gametitile2.jfif" alt="logo" width="auto" height="auto" style="margin-left: 30px;">
+          <button type="button" class="close" data-dismiss="modal" style="position: absolute;top:5px;">&times;</button>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <input type="text" id="p1" placeholder="PLayer 1 name">
+          <input type="text" id="p2" placeholder="PLayer 2 name">
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="start()">ok</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- The Modal for help -->
+<div class="modal" id="myModalhelp">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Instructions</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <p>Click on the Roll Dice button to start playing <br>
+        The players token moves the number of columns as in the face of the Dice <br>
+        If the token is in a column of snake , you drop to the snakes tail <br>
+        if you got the ladder you can climb up the grid <br>
+        The first player to reach hundred will win 
+        <br>All the best !!!!!!!!!!
+      </p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ok</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--winner modal window-->
+<div class="container">
+  <!-- Button to Open the Modal when game ends -->
+  <button type="button" class="btn btn-primary" id="btn-hidden" data-toggle="modal" data-target="#winner">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="winner">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Congratulations</h4>
+          
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body text-center">
+          <h3 id="winnername">Player wins</h3>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script src="../js/testjs.js"></script>
+<audio id="audroll">
+  <source src="../assets/Shake And Roll Dice-SoundBible.com-591494296.mp3" type="audio/ogg" >
+ </audio>
+<audio id="audcatch">
+  <source src="../assets/Cartoon Hop-SoundBible.com-553158131.mp3" type="audio/ogg" >
+ </audio>
+<audio id="audjump">
+  <source src="../assets/Jump-SoundBible.com-1007297584.mp3" type="audio/ogg" >
+ </audio>
+ <audio id="audwin">
+   <source src="../assets/mixkit-completion-of-a-level-2063.wav" type="audio/ogg">
+ </audio>
+ <audio id="audstart">
+   <source src="../assets/mixkit-game-level-completed-2059.wav" type="audio/ogg">
+ </audio>
+</body>
+</html>
